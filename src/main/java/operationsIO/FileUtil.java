@@ -1,4 +1,4 @@
-package day0901;
+package operationsIO;
 
 import java.io.*;
 
@@ -15,8 +15,12 @@ public class FileUtil {
         return stringBuilder.toString();
     }
 
-    public void writeFile(String path, String content){
-// ta metoda ma zapisać dane do outputu
+// ta metoda poniżej ma zapisać dane do outputu
+    public void writeFile(String path, String content) throws IOException {
+        var fileWriter = new FileWriter(path);
+        var bufferedWriter = new BufferedWriter(fileWriter);
+        bufferedWriter.write(content);
+        bufferedWriter.flush();
     }
 
 }

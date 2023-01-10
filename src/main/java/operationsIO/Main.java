@@ -1,12 +1,41 @@
-package day0901;
+package operationsIO;
 
 import java.io.*;
+import java.nio.CharBuffer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        bufferedReader();
- //       fileReader();
- //       fileInputStream();
+        path();
+//        buffer();
+//       bufferedReader();
+//       fileReader();
+//       fileInputStream();
+    }
+
+
+    private static void path() throws IOException {
+        Path path = Paths.get("src/main/resources/channelFile");
+        if(!Files.exists(path))
+            Files.createFile(path);
+        Files.write(path, "Bartek".getBytes(), StandardOpenOption.WRITE);
+    }
+
+
+    // Buffer = Bufor
+    private static void buffer() {
+        CharBuffer charBuffer = CharBuffer.allocate(6);
+        String name = "Bartek";
+
+        for (int i = 0; i < name.length(); i++) {
+            char c = name.charAt(i);
+            charBuffer.put(c);
+        }
+        System.out.println(Arrays.toString(charBuffer.array()));
     }
 
 
@@ -14,7 +43,7 @@ public class Main {
         var fileReader = new FileReader("src/main/resources/input");
         var bufferedReader = new BufferedReader(fileReader);
 
-        var fileWriter = new FileWriter ("src/main/resources/output.txt");
+        var fileWriter = new FileWriter("src/main/resources/output.txt");
         var bufferedWriter = new BufferedWriter(fileWriter);
 
         bufferedWriter.write("Hello");
@@ -29,10 +58,10 @@ public class Main {
 
     private static void fileReader() throws IOException {
         var fileReader = new FileReader("src/main/resources/input");
-        var fileWriter = new FileWriter ("src/main/resources/output");
+        var fileWriter = new FileWriter("src/main/resources/output");
 
         int i;
-        while ((i = fileReader.read()) != -1){
+        while ((i = fileReader.read()) != -1) {
             fileWriter.write(i);
             System.out.println((char) i);
         }
@@ -67,7 +96,7 @@ public class Main {
 
 
         int i;
-        while ((i = fileInputStream.read()) != -1){
+        while ((i = fileInputStream.read()) != -1) {
             System.out.println(i);
             fileOutputStream.write(i);
         }
