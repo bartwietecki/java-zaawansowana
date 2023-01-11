@@ -16,7 +16,7 @@ public class Main {
         var personFromFile = (Person) objectInputStream.readObject();
 
         System.out.println("Imie: " + personFromFile.getName());
-        System.out.println("Nazwisko " + personFromFile.getSurname());
+        System.out.println("Nazwisko: " + personFromFile.getSurname());
 
 
     }
