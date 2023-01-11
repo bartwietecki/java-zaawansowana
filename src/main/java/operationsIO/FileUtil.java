@@ -15,7 +15,7 @@ public class FileUtil {
         return stringBuilder.toString();
     }
 
-// ta metoda poniżej ma zapisać dane do outputu
+// ta metoda poniżej ma zapisać dane do outputu - ZADANIE
     public void writeFile(String path, String content) throws IOException {
         var fileWriter = new FileWriter(path);
         var bufferedWriter = new BufferedWriter(fileWriter);
