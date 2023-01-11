@@ -1,4 +1,6 @@
-package oop.showroom;
+package oop.showroom.model;
+
+import oop.showroom.model.enums.*;
 
 public abstract class Vehicle {
 
@@ -25,7 +27,7 @@ public abstract class Vehicle {
         this.isUsed = isUsed;
     }
 
-    abstract Object getSimpleVehicle();
+    public abstract Object getSimpleVehicle();
 
     public BrandType getBrand() {
         return brand;
