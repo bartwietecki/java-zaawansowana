@@ -46,6 +46,18 @@ public class Car extends Vehicle {
 //    }
 
 
+    @Override
+    public String toString() {
+        return "Car {" +
+                "brand: " + super.getBrand() +
+                ", model: " + super.getModel() +
+                ", fuel: " + fuel +
+                ", carDrive: " + carDrive +
+                ", doorsNumber: " + doorsNumber +
+                ", capacity: " + capacity +
+                ", passengersNumber: " + passengersNumber +
+                "}";
+    }
 
     static class simpleCar {
         private BrandType brandType;

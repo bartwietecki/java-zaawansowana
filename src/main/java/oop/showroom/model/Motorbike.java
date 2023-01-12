@@ -23,6 +23,29 @@ public class Motorbike extends Vehicle {
         return new SimpleMotorbike(this);
     }
 
+//    @Override
+//    public String toString() {
+//        return "Motorbike {" +
+//                "Brand: " + super.getBrand() +
+//                ", Model: " + super.getModel() +
+//                ", Colour: " + super.getColour() +
+//                ", Engine: " + super.getEngine() +
+//                ", Mileage: " + super.getMileage() +
+//                ", Motorbike Type: " + motorbikeType +
+//                ", Motorbike Drive: " + motorbikeDrive +
+//                "} ";
+//    }
+
+    @Override
+    public String toString() {
+        return "Motorbike {" +
+                "brand: " + super.getBrand() +
+                ", model: " + super.getModel() +
+                ", motorbike type: " + motorbikeType +
+                ", motorbike drive: " + motorbikeDrive +
+                "} ";
+    }
+
     static class SimpleMotorbike{
         private final BrandType brandType;
         private final MotorbikeType motorbikeType;
