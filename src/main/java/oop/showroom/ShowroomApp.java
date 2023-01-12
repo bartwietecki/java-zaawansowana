@@ -50,7 +50,7 @@ public class ShowroomApp {
         }
     }
 
-    private void showMenu(){
+    private void showMenu() {
         System.out.println("Jaką operację chcesz wykonać?");
         System.out.println("1 - dodaj nowy samochód");
         System.out.println("2 - dodaj nowy motocykl");
@@ -71,7 +71,7 @@ public class ShowroomApp {
         System.out.println("Dodano samochód");
     }
 
-    private void addMotorbike(VehicleService vehicleService){
+    private void addMotorbike(VehicleService vehicleService) {
         Motorbike motorbike = new Motorbike();
         System.out.println("Podaj markę: BMW, AUDI, CITROEN");
         String motorbikeBrand = SCANNER.next();
@@ -83,7 +83,7 @@ public class ShowroomApp {
         System.out.println("Dodano motor");
     }
 
-    private void showVehicles(VehicleService vehicleService){
+    private void showVehicles(VehicleService vehicleService) {
         System.out.println("Lista wszystkich pojazdów:");
         for (Vehicle vehicle : vehicleService.getAllVehicles()) {
             System.out.println(vehicle);
@@ -91,7 +91,7 @@ public class ShowroomApp {
         System.out.println();
     }
 
-    private void initalMethod(VehicleService vehicleService){
+    private void initalMethod(VehicleService vehicleService) {
         Vehicle audi = new Car(BrandType.AUDI, ModelType.A4, ColourType.RED, EngineType.V8, 10_000,
                 GearboxType.AUTOMATIC, false, FuelType.PB95, "car-drive", 5,
                 200, 5);
