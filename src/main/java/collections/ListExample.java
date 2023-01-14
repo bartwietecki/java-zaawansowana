@@ -15,16 +15,15 @@ public class ListExample {
         System.out.println(strings);
 
         /*
-        List
+        Lista
          */
-
         List<String> stringList = new ArrayList<>();
         stringList.add(s1);
         stringList.add(s2);
         stringList.add(s2);
         stringList.add(s2);
         stringList.add(s2);
-        stringList.remove(0);
+        stringList.remove(0); // usnięcie pierwszego elementu z listy
         System.out.println(stringList);
 
 

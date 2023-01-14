@@ -63,9 +63,49 @@ public class ShowroomApp {
         System.out.println("Podaj markę: BMW, AUDI, CITROEN");
         String brand = SCANNER.next();
         car.setBrand(BrandType.valueOf(brand)); // Brand jest ENUMem, a nie Stringiem
+
+        System.out.println("Podaj model: X6, A4, C4");
+        String model = SCANNER.next();
+        car.setModel(ModelType.valueOf(model));
+
+        System.out.println("Podaj kolor: RED, GREEN, WHITE");
+        String colour = SCANNER.next();
+        car.setColour(ColourType.valueOf(colour));
+
+        System.out.println("Podaj typ silnika: V8, V12");
+        String engineType = SCANNER.next();
+        car.setEngine(EngineType.valueOf(engineType));
+
+        System.out.println("Podaj przebieg");
+        double mileage = SCANNER.nextDouble();
+        car.setMileage(mileage);
+
+        System.out.println("Podaj rodzaj skrzyni biegów: MANUAL, AUTOMATIC");
+        String gearboxType = SCANNER.next();
+        car.setGearboxType(GearboxType.valueOf(gearboxType));
+
+        // jak dodać boolean'a isUsed (?)
+
+        System.out.println("Podaj rodzaj paliwa: PB95, PB98, DIESEL");
+        String fuel = SCANNER.next();
+        car.setFuel(FuelType.valueOf(fuel));
+
+        System.out.println("Podaj napęd");
+        String carDrive = SCANNER.next();
+        car.setCarDrive(carDrive);
+
         System.out.println("Podaj liczbę drzwi");
         int doorsNumber = SCANNER.nextInt();
         car.setDoorsNumber(doorsNumber);
+
+        System.out.println("Podaj pojemność bagażnika");
+        int capacity = SCANNER.nextInt();
+        car.setCapacity(capacity);
+
+        System.out.println("Podaj liczbę pasażerów");
+        int passengersNumber = SCANNER.nextInt();
+        car.setPassengersNumber(passengersNumber);
+
         vehicleService.addVehicle(car); // car dziedziny po vehicle
         // samochód dodaje się do naszej bazy pojazdów
         System.out.println("Dodano samochód");
@@ -76,9 +116,37 @@ public class ShowroomApp {
         System.out.println("Podaj markę: BMW, AUDI, CITROEN");
         String motorbikeBrand = SCANNER.next();
         motorbike.setBrand(BrandType.valueOf(motorbikeBrand));
+
+        System.out.println("Podaj model: X6, A4, C4");
+        String motorbikeModel = SCANNER.next();
+        motorbike.setModel(ModelType.valueOf(motorbikeModel));
+
+        System.out.println("Podaj kolor: RED, GREEN, WHITE");
+        String motorbikeColour = SCANNER.next();
+        motorbike.setColour(ColourType.valueOf(motorbikeColour));;
+
+        System.out.println("Podaj typ silnika: V8, V12");
+        String motorbikeEngineType = SCANNER.next();
+        motorbike.setEngine(EngineType.valueOf(motorbikeEngineType));
+
+        System.out.println("Podaj przebieg");
+        double motorbikeMileage = SCANNER.nextDouble();
+        motorbike.setMileage(motorbikeMileage);
+
+        System.out.println("Podaj rodzaj skrzyni biegów: MANUAL, AUTOMATIC");
+        String motorbikeGearboxType = SCANNER.next();
+        motorbike.setGearboxType(GearboxType.valueOf(motorbikeGearboxType));
+
+        // How to make isUsed ? boolean
+
         System.out.println("Podaj typ motoru: CHOPPER, ENDURO");
         String motorbikeType = SCANNER.next();
         motorbike.setMotorbikeType(MotorbikeType.valueOf(motorbikeType));
+
+        System.out.println("Podaj napęd");
+        String motorbikeDrive = SCANNER.next();
+        motorbike.setMotorbikeDrive(motorbikeDrive);
+
         vehicleService.addVehicle(motorbike);
         System.out.println("Dodano motor");
     }
@@ -93,7 +161,7 @@ public class ShowroomApp {
 
     private void initalMethod(VehicleService vehicleService) {
         Vehicle audi = new Car(BrandType.AUDI, ModelType.A4, ColourType.RED, EngineType.V8, 10_000,
-                GearboxType.AUTOMATIC, false, FuelType.PB95, "car-drive", 5,
+                GearboxType.AUTOMATIC, false, FuelType.PB95, "4X4", 5,
                 200, 5);
 
         Motorbike bmwMotorbike = new Motorbike(BrandType.BMW, ModelType.X6, ColourType.GREEN, EngineType.V8, 50_000,

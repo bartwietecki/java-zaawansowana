@@ -85,6 +85,8 @@ public abstract class Vehicle {
         isUsed = used;
     }
 
+
+
     // ZADANIE: Jak zrobić, aby pokazać wszystkie elementy z Vehicle oraz Car (toString).
     @Override
     public String toString() {
@@ -98,4 +100,6 @@ public abstract class Vehicle {
                 ", isUsed=" + isUsed +
                 '}';
     }
+
+
 }
