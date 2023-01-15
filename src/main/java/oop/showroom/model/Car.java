@@ -1,12 +1,14 @@
 package oop.showroom.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import oop.showroom.model.enums.*;
 
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class Car extends Vehicle {
     private FuelType fuel;
     private String carDrive;
@@ -46,6 +48,23 @@ public class Car extends Vehicle {
 //    }
 
 
+    @Override
+    public String toString() {
+        return "Car {" +
+                "Brand: " + super.getBrand() +
+                ", Model: " + super.getModel() +
+                ", Colour: " + super.getColour() +
+                ", Enginge Type: " + super.getEngine() +
+                ", Mileage: " + super.getMileage() +
+                ", Gearbox Type: " + super.getGearboxType() +
+                ", Used: " + super.isUsed() +
+                ", Fuel: " + fuel +
+                ", Car Drive: " + carDrive +
+                ", Doors Number: " + doorsNumber +
+                ", Capacity: " + capacity +
+                ", Passengers Number: " + passengersNumber +
+                "}";
+    }
 
     static class simpleCar {
         private BrandType brandType;

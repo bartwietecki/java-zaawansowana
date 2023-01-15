@@ -85,4 +85,21 @@ public abstract class Vehicle {
         isUsed = used;
     }
 
+
+
+    // ZADANIE: Jak zrobić, aby pokazać wszystkie elementy z Vehicle oraz Car (toString).
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "brand=" + brand +
+                ", model=" + model +
+                ", colour=" + colour +
+                ", engine=" + engine +
+                ", mileage=" + mileage +
+                ", gearboxType=" + gearboxType +
+                ", isUsed=" + isUsed +
+                '}';
+    }
+
+
 }

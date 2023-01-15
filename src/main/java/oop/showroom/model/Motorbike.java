@@ -1,11 +1,13 @@
 package oop.showroom.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import oop.showroom.model.enums.*;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class Motorbike extends Vehicle {
     private MotorbikeType motorbikeType;
     private String motorbikeDrive;
@@ -22,6 +24,22 @@ public class Motorbike extends Vehicle {
     public Object getSimpleVehicle(){
         return new SimpleMotorbike(this);
     }
+
+    @Override
+    public String toString() {
+        return "Motorbike {" +
+                "Brand: " + super.getBrand() +
+                ", Model: " + super.getModel() +
+                ", Colour: " + super.getColour() +
+                ", Engine: " + super.getEngine() +
+                ", Mileage: " + super.getMileage() +
+                ", GearBox Type: " + super.getGearboxType() +
+                ", Used: " + super.isUsed() +
+                ", Motorbike Type: " + motorbikeType +
+                ", Motorbike Drive: " + motorbikeDrive +
+                "} ";
+    }
+
 
     static class SimpleMotorbike{
         private final BrandType brandType;
