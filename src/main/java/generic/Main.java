@@ -6,7 +6,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         SDAList<String> list = new SDAList<>();
-        List<String> listFromElements = new SDAList<>("Tomek", "Magda", "Kasia"));
+        List<String> listFromElements = new SDAList<>("Tomek", "Magda", "Kasia");
         List<String> listOf = SDAList.of("Tomek", "Magda", "Kasia");
 
         /*
