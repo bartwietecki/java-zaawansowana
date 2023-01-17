@@ -15,10 +15,12 @@ public class SetExample {
         System.out.println(strings);
         // sout to [napis 2, napis]
 
-        Set<String> treeSet = new TreeSet<>();
+        TreeSet<String> treeSet = new TreeSet<>();
         treeSet.add("Tomek");
         treeSet.add("Adam");
         treeSet.add("Joanna");
-//        System.out.println(treeSet.); dlaczego nie mogę ustawić poll ???
+        System.out.println(treeSet.pollFirst());
+        System.out.println(treeSet.pollLast());
+
     }
 }
