@@ -4,6 +4,6 @@ package lambda.exercise;
 public interface Process {
 
 
-    boolean apply(Integer num); // przetwarzamy Integery
+    boolean apply(Integer num); // przetwarzamy Integer'y
 
 }
