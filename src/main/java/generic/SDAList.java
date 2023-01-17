@@ -21,7 +21,7 @@ public class SDAList<E> implements List<E> {
 
     // tworzymy publiczną metodę, która będzie przyjmowała obiekty typu E
     public static <E> SDAList<E> of(E...elements){   // <- chcemy przyjmować obiekt E (E elements)  [a te 3 kropki oznaczają, że mogę wypisywać sobie elementy po kolei, po przecinku / "Wrzucamy tam tablicę"]
-        return new SDAList<>();
+        return new SDAList<>(elements);
     }
 
 
@@ -49,7 +49,13 @@ public class SDAList<E> implements List<E> {
         return emptyList;
     }
 
-// Resztę można zaimplementować samodzielnie, tak jak na przykładzie size
+    @Override
+    public String toString() {
+        return list.toString();
+    }
+
+
+    // Resztę można zaimplementować samodzielnie, tak jak na przykładzie size
 
     @Override
     public int size() {
@@ -93,7 +99,7 @@ public class SDAList<E> implements List<E> {
 
     @Override
     public boolean addAll(Collection<? extends E> c) {
-        return false;
+        return list.addAll(c);
     }
 
     @Override

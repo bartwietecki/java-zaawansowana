@@ -10,8 +10,11 @@ public class Main {
         List<String> listOf = SDAList.of("Tomek", "Magda", "Kasia");
 
         /*
+
         List.of(1,2,3,4,5); // Lista pozwala nam zainicjować obiekt w ten sposób
+
          */
+
 
         System.out.println(listOf.size());
 
@@ -21,6 +24,8 @@ public class Main {
         arrayList.add("Damian");
         arrayList.add("Karolina");
 
-        list.union(arrayList);
+        System.out.println(list.union(arrayList));
     }
 }
+
+
