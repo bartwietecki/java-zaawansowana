@@ -56,13 +56,34 @@ public class LambdaExample {
 
   */
 
+        // Wyrażenie lambda pozwala na dodanie do każdego lakarza Hello przed imieniem
         var editedList = editedDoctors(doctors, (s) -> "Hello " + s.toUpperCase());    // WYRAŻENIE LAMBDA
 
         System.out.println(editedList);
+
+        // Poniżej: WYRAŻENIE LAMBDA POZWALA NA ZLICZENIE LICZBY ZNAKÓW W IMIENIU KAŻDEGO LEKARZA/DOCTOR
+
+        // var countedDoctorsList = countedDoctors(doctors, String::length); <- poniższy inny zapis, referencja do metody
+
+        //                                             ustawiamy nawę d, bo doctor już wcześniej był używany
+        var countedDoctorsList = countedDoctors(doctors, d -> d.length()); // na 2gim miejscu musze wstrzyknac implementacje,
+                                                                     // która policzy ilość znaków z imienia każdego doktora
+        System.out.println(countedDoctorsList);
     }
 
-    // robię metodę aby otrzymać nową listę ze starej listy lekarze
+    private static List<Integer> countedDoctors(List<String> doctors,
+                                               IntegerFunctionalInterface functionalInterface){
+        var result = new ArrayList<Integer>();
+        // dla każdego elementu z tej listy doctors, ja musze coś zrobić
+        for(String d : doctors){
+            // do tego chce dodać doktorów z listy doctors
+            result.add(functionalInterface.process(d));
+        }
+        return result;
+    }
 
+
+    // robię metodę aby otrzymać nową listę ze starej listy lekarze
     private static List<String> editedDoctors(List<String> doctors, Doctor doctor){
         var result = new ArrayList<String>();
         for(String name : doctors){
