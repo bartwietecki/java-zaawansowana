@@ -3,7 +3,7 @@ package collections.streams;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+class Main {
 
     public static void main(String[] args) {
 //      -----------------------------DOTYCZY METODY STRUMIENIOWEJ, KTÓRA NAZYWA SIĘ FILTER -----------------------------
@@ -50,11 +50,40 @@ public class Main {
         // wyobraź sobie że każdy element po kolei chcesz przekonwerować, czyli:
         // integer -> toString().
         // i zakończ Streama metodą .toList (zapisz wszystko co przekonwertowałeś do Listy)
+
+
+//      ------------------------DOTYCZY METODY STRUMIENIOWEJ, KTÓRA NAZYWA SIĘ FLAT MAP --------------------------------
+        Person jan = new Person("Jan", "Kowalski");
+        Person karolina = new Person("Karolina", "Szwata");
+        Person rozalia = new Person("Rozalia", "Kobylska");
+        Person maciej = new Person("Maciej", "Puszkowski");
+        Person tomasz = new Person("Tomasz", "Wojtyra");
+
+        // Zróbmy sobie jakieś 2 szkolenia
+        var java = new Training("Java", List.of(jan, karolina));
+        var python = new Training("Python", List.of(rozalia, maciej, tomasz));
+
+        // zróbmy teraz listę treningów
+        var trainings = List.of(java, python);
+
+        // wyciągamy wszystkie imiona osób na szkolenie
+        var names = trainings.stream().flatMap(training -> training.getStudents().stream()
+                .map(person -> person.getName())).toList();
+
+//        var names = trainings.stream().flatMap(training -> training.getStudents().stream()
+//                .map(Person::getName)).toList();
+
+        System.out.println("Imiona po flat mapie: " + names);
+        // W A Ż N E
+        // spłaszczam strukture do strumienia, ktory bedzie skladał się tylko i wyłącznie z listy studentow
+        // w moim training mam liste, ale nie moge jej od razu przestreamowac bo mam ją w dwoch obiekatach
+        // za pomoca flat mapy pozbywam sie dwoch obiektow i wchodze do streama
+        // no i dalej w streamie za pomoca mapy sobie wszystko przerabiam
     }
 
-    private static List<String> converter(List<Integer> integers){
+    private static List<String> converter(List<Integer> integers) {
         var result = new ArrayList<String>();
-        for(Integer i : integers){
+        for (Integer i : integers) {
             result.add(i.toString());
         }
         return result;

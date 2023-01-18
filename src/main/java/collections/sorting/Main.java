@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
 
         // ------------------------- SORTOWANIE - COLLECTIONS -----------------------------
@@ -91,7 +91,7 @@ public class Main {
         Person jadwiga = new Person("Jadwiga", "Skudro");
 
         List<Person> people = new ArrayList<>(List.of(jan, karolina, jadwiga));
-        System.out.println("Nieposortowana liczba osób: "  + people);
+        System.out.println("Nieposortowana liczba osób: " + people);
 
 //        people.sort(new Comparator<Person>() {
 //            @Override
