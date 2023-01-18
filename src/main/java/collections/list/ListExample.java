@@ -54,8 +54,9 @@ public class ListExample {
         linkedList.removeFirst();
         linkedList.removeLast();
         System.out.println(linkedList);
-    }
 
+
+    }
 }
 
 // Posprawdzać i pobawić się tymi listami
