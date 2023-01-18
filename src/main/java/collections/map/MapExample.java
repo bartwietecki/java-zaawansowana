@@ -60,5 +60,45 @@ public class MapExample {
 
 
 
+        // #1
+
+//        klasa.forEach(new BiConsumer<String, Integer>() {
+//            @Override
+//            public void accept(String s, Integer integer) {
+//                System.out.println("Klucz: " + s + " | Wartość: " + integer);
+//            }
+//        });
+
+        // ZAPIS POWYŻSZY ZA POMOCĄ LAMBDY (patrz niżej) | Wyświetlanie wszystkich elementów mapy za pomocą lambdy
+
+        // Strin Integer , wyrzucamy typy i nazwy zmiennych, Java sama się domyśli
+        klasa.forEach((k, v) -> System.out.println("Klucz: " + k + " | Wartość: " + v));
+
+
+
+
+
+        // #2
+
+        // Wyświetlanie wszystkich elementów mapy za pomocą lambdy, które mają wartość większą niż 4
+//        klasa.forEach(new BiConsumer<String, Integer>() {
+//            @Override
+//            public void accept(String s, Integer integer) {
+//                if(integer > 4){  // Jeśli wartość większa niż 4, to wyświetlamy sobie osobę
+//                    System.out.println("Klucz: " + s + " | Wartość: " + integer);
+//                }
+//            }
+//        });
+
+
+        klasa.forEach((s, integer) -> {
+            if (integer > 4) System.out.println("Klucz: " + s + " | Wartość: " + integer);
+        });
+
+
+
+
+
+
     }
 }
