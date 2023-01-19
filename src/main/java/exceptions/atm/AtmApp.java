@@ -6,7 +6,7 @@ public class AtmApp {
 
     public static void main(String[] args) {
         handleWithdraw(2000d);
-
+        makeDeposit(15_000d);
 
     }
 
@@ -14,8 +14,15 @@ public class AtmApp {
     public static void handleWithdraw(Double amount) {
         try {
             ATM.withdraw(amount);
+        } catch (OutOfMoneyException e) {
+            System.out.println(e.getMessage());
         }
-        catch (OutOfMoneyException e) {
+    }
+
+    public static void makeDeposit(Double amount) {
+        try {
+            ATM.makeDeposit(amount);
+        } catch (TooMuchMoneyException e) {
             System.out.println(e.getMessage());
         }
     }

@@ -2,6 +2,12 @@ package exceptions.atm;
 
 import lombok.Setter;
 
+import static exceptions.atm.ExceptionMessages.NOT_ENOUGH_MONEY_IN_ATM;
+import static java.lang.String.format;
+
+/**
+ * Klasa reprezentująca bankomat
+ */
 @Setter
 public class Atm {
     private Double cash;
@@ -12,16 +18,25 @@ public class Atm {
         this.cash = cash;
     }
 
+    /**
+     * Metoda odpowiedzialna za wpłatę pieniędzy
+     * @param amount wpłacana kwota
+     */
     public void makeDeposit(Double amount) {
-        this.cash = this.cash + amount; // this.cash += amount
+        if(cash + amount > capacity) {
+            var maxDeposit = capacity - cash;
+            throw new TooMuchMoneyException(maxDeposit);
+        }
+            this.cash = this.cash + amount; // this.cash += amount
     }
 
     public void withdraw(Double amount) {
         if(cash - amount <= 0){
-            throw new OutOfMoneyException(ExceptionMessages.NOT_ENOUGH_MONEY_IN_ATM.getMessage());
+            throw new OutOfMoneyException(format(NOT_ENOUGH_MONEY_IN_ATM.getMessage(), cash));
         }
         cash -= amount;
     }
+
 
 //    public void withdraw(Double amount) {
 //        Double cash = this.cash;
