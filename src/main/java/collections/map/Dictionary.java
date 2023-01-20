@@ -17,6 +17,8 @@ public class Dictionary {
         return pairs;
     }
 
+    // TODO Przejrzeć jeszcze raz metodę, to co się tutaj dzieje i skumać
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj słowo po polsku aby przetłumaczyć");

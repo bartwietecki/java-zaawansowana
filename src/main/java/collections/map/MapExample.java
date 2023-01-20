@@ -19,7 +19,7 @@ public class MapExample {
 
         //Mapa trzyma unikalne klucze, więc nie można dodać dwoch rekordow ponizej
         klasa.put(uczen1, ocena1);
-        klasa.put(uczen2, ocena2);
+        klasa.put(uczen1, ocena2);
 
         //Ten rekord już można dodać
         klasa.put(uczen2, ocena2);
@@ -69,9 +69,9 @@ public class MapExample {
 //            }
 //        });
 
-        // ZAPIS POWYŻSZY ZA POMOCĄ LAMBDY (patrz niżej) | Wyświetlanie wszystkich elementów mapy za pomocą lambdy
+        // ZAPIS POWYŻSZY ZAPISANY ZA POMOCĄ LAMBDY (patrz niżej) | Wyświetlanie wszystkich elementów mapy za pomocą lambdy
 
-        // Strin Integer , wyrzucamy typy i nazwy zmiennych, Java sama się domyśli
+        // String Integer , wyrzucamy typy i nazwy zmiennych, Java sama się domyśli
         klasa.forEach((k, v) -> System.out.println("Klucz: " + k + " | Wartość: " + v));
 
 
@@ -79,8 +79,8 @@ public class MapExample {
 
 
         // #2
-
         // Wyświetlanie wszystkich elementów mapy za pomocą lambdy, które mają wartość większą niż 4
+
 //        klasa.forEach(new BiConsumer<String, Integer>() {
 //            @Override
 //            public void accept(String s, Integer integer) {

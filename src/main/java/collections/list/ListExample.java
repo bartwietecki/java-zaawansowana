@@ -1,6 +1,7 @@
 package collections.list;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class ListExample {
         String[] strings = new String[10];
         strings[0] = s1;
         strings[1] = s2;
-        System.out.println(strings);
+        System.out.println(Arrays.toString(strings));
 
         /*
         Lista

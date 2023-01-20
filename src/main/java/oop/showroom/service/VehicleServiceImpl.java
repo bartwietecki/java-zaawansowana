@@ -19,14 +19,15 @@ public class VehicleServiceImpl implements VehicleService { // implementacja int
     // Ogarnąć sobie jeszcze raz, 2 tablice, działanie
     @Override
     public Vehicle[] getAllVehicles() {
+
         Vehicle[] tab = VehicleRepository.vehicles;
         int counter = 0;
         for (Vehicle v : tab) {
             if (v != null)
                 counter++;
         }
-        Vehicle[] result = new Vehicle[counter]; // nowa tablica, która jest tak długa ile jest elementów NIEnullowych !
 
+        Vehicle[] result = new Vehicle[counter]; // nowa tablica, która jest tak długa ile jest elementów NIEnullowych !
         int index = 0;
         for (Vehicle v : tab) {
             if (v != null) {
@@ -34,9 +35,7 @@ public class VehicleServiceImpl implements VehicleService { // implementacja int
                 index++;
             }
         }
-
         return result;
-
     }
 
 }

@@ -19,6 +19,7 @@ public class MapExercises {
 
         // Klasa
         List<Integer> ocenyBasia = List.of(matematykaOcena2, biologiaOcena2);
+
         Map<String, List<Integer>> classroom = new HashMap<>();
         classroom.put(jan, ocenyJan); // ustalamy ucznia i oceny
         classroom.put(basia, ocenyBasia); // ustalamy ucznia i oceny
@@ -38,6 +39,7 @@ public class MapExercises {
     }
 
     //TODO obsłużyć wyjątek dzielenia przez 0
+    // Przejrzeć jeszcze raz metodę z liczeniem średniej, skumać ją !!!
     private static Map<String, Double> countAvgForStudents(Map<String, List<Integer>> students){
         Map<String, Double> result = new HashMap<>(); // tworzymy nową mapę do której zapisane zostaną wartości
         for(Map.Entry<String, List<Integer>> record : students.entrySet()){
