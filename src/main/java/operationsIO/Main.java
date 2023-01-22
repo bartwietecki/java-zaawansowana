@@ -49,7 +49,7 @@ public class Main {
         bufferedWriter.write("Hello");
 
         String line;
-        while ((line = bufferedReader.readLine()) != null) {
+        while ((line  = bufferedReader.readLine())!= null) {
             bufferedWriter.write(line);
             System.out.println(line);
         }
@@ -73,26 +73,31 @@ public class Main {
         // musi zawierać ścieżkę do jakiegoś pliku
         FileInputStream fileInputStream = new FileInputStream("src/main/resources/input");
         FileOutputStream fileOutputStream = new FileOutputStream("src/main/resources/output");
-//        System.out.println(fileInputStream.available());
-//
-//        int i = fileInputStream.read();
-//        int i1 = fileInputStream.read();
-//        char c = (char) i;
-//        char c1 = (char) i1;
-//
-//        // poniżej:
-//        // najpierw coś sobie czytam, zapisuje do zmiennej 'i', int'a zmieniam na char'a (rzutuje go), i chara printuje
-//
-//        System.out.println(c);
-//        System.out.println(c1);
-//        int i2 = fileInputStream.read();
-//        System.out.println(i2);
 
-//        int i = fileInputStream.read();
-//        while (i != -1) {
-//            System.out.println(i);
-//            i = fileInputStream.read();
-//    }
+        /*
+
+        System.out.println(fileInputStream.available());
+
+        int i = fileInputStream.read();
+        int i1 = fileInputStream.read();
+        char c = (char) i;
+        char c1 = (char) i1;
+
+        // poniżej:
+        // najpierw coś sobie czytam, zapisuje do zmiennej 'i', int'a zmieniam na char'a (rzutuje go), i chara printuje
+
+        System.out.println(c);
+        System.out.println(c1);
+        int i2 = fileInputStream.read();
+        System.out.println(i2);
+
+        int i = fileInputStream.read();
+        while (i != -1) {
+            System.out.println(i);
+            i = fileInputStream.read();
+    }
+
+         */
 
 
         int i;

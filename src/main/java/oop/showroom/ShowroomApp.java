@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class ShowroomApp {
 
-    private static final Scanner SCANNER = new Scanner(System.in); // System.in oznacza wejście systemu
+    private static final Scanner SCANNER = new Scanner(System.in); // (System.in) oznacza wejście systemu
 
     // ten Main to jest start naszej aplikacji
     public static void main(String[] args) throws InterruptedException {
@@ -23,7 +23,7 @@ public class ShowroomApp {
     private void run() throws InterruptedException {
         VehicleServiceImpl vehicleService = new VehicleServiceImpl();
 
-        initalMethod(vehicleService);
+        initialMethod(vehicleService);
 
         boolean on = true;
 
@@ -106,7 +106,7 @@ public class ShowroomApp {
         int passengersNumber = SCANNER.nextInt();
         car.setPassengersNumber(passengersNumber);
 
-        vehicleService.addVehicle(car); // car dziedziny po vehicle
+        vehicleService.addVehicle(car); // car dziedziczy po vehicle
         // samochód dodaje się do naszej bazy pojazdów
         System.out.println("Dodano samochód");
     }
@@ -159,7 +159,7 @@ public class ShowroomApp {
         System.out.println();
     }
 
-    private void initalMethod(VehicleService vehicleService) {
+    private void initialMethod(VehicleService vehicleService) {
         Vehicle audi = new Car(BrandType.AUDI, ModelType.A4, ColourType.RED, EngineType.V8, 10_000,
                 GearboxType.AUTOMATIC, false, FuelType.PB95, "4X4", 5,
                 200, 5);

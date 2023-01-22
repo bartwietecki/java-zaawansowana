@@ -8,6 +8,7 @@ public enum FuelType {
 
     private final String description;
 
+
     // konstrutkor tworzymy, z polem do ENUMA PB95
     FuelType(String description){
         this.description = description;
