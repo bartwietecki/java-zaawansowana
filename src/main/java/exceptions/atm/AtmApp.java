@@ -10,7 +10,7 @@ public class AtmApp {
 
     }
 
-    // Stworzymy metodę, która bedzie opakowywac ten nasz withdraw dodatkowym , ktory cos tam zrobi i coś wyswietli..
+    // Stworzymy metodę, która bedzie opakowywac ten nasz withdraw dodatkowym ...?, ktory cos tam zrobi i coś wyswietli..
     public static void handleWithdraw(Double amount) {
         try {
             ATM.withdraw(amount);

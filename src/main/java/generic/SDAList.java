@@ -9,18 +9,20 @@ public class SDAList<E> implements List<E> {
     private List<E> list;
 
 
-    // Chcemy zainicjować sobie naszą listę <- tworzymy konstruktor, nie musimy dawać oiektu
+    // Chcemy zainicjować sobie naszą listę <- tworzymy konstruktor, nie musimy dawać obiektu
     public SDAList(){
         this.list = new ArrayList<>();
     }
 
     public SDAList(E...elements){
-        this.list = new ArrayList<>(List.of(elements)); // najpierw Array przekonwertujemy na listę i następnie bez problemu możemy dodać nasze elementy
+        this.list = new ArrayList<>(List.of(elements)); // najpierw Array przekonwertujemy na listę i następnie
+        // bez problemu możemy dodać nasze elementy
     }
 
 
     // tworzymy publiczną metodę, która będzie przyjmowała obiekty typu E
-    public static <E> SDAList<E> of(E...elements){   // <- chcemy przyjmować obiekt E (E elements)  [a te 3 kropki oznaczają, że mogę wypisywać sobie elementy po kolei, po przecinku / "Wrzucamy tam tablicę"]
+    public static <E> SDAList<E> of(E...elements){   // <- chcemy przyjmować obiekt E (E elements) ,
+        // a te 3 kropki oznaczają, że mogę wypisywać sobie elementy po kolei, po przecinku / "Wrzucamy tam tablicę"
         return new SDAList<>(elements);
     }
 

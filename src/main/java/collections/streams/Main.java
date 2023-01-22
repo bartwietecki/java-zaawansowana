@@ -18,7 +18,8 @@ class Main {
         }
         System.out.println("Tylko parzyste pętla " + onlyEvenLoop);
 
-        var integerStream = integers.stream(); // jak napiszę var to dostaję :Stream <Integer> , czyli Interface, która zawiera określone metody
+        var integerStream = integers.stream(); // jak napiszę var to dostaję :Stream <Integer> ,
+        // czyli Interface, który zawiera określone metody
         // na tym integerStreamie jestem w stanie wywołać te metody (z Interface'u)
 
 //        integerStream.filter(new Predicate<Integer>() {

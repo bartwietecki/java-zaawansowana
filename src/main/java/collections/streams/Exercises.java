@@ -23,12 +23,10 @@ class Exercises {
 
         // Moje rozwiązanie:
         /*
-
         List<Person> namesList = new ArrayList<>(List.of(jan, karolina, rozalia, maciej, tomasz));
 
         namesList.sort((o1, o2) -> o1.getName().charAt(0));
         System.out.println("Posortowana lista po imionach: " + namesList);
-
          */
 
 
@@ -55,12 +53,13 @@ class Exercises {
         classroom.put(jan1, ocenyJan);
         classroom.put(basia, ocenyBasia);
 
-        // metoda forEach, jestem w stanie poiterować po mapce i z każdym elementem coś zrobić
+        // metodą forEach, jestem w stanie poiterować po mapce i z każdym elementem coś zrobić
         // wyświetlanie za pomocą lambdy klucza i wartości
         classroom.forEach((k, v) -> System.out.println(k + v));
 
         // mapa to jest entrySet (możemy go zrobić)
-        var result = classroom.entrySet().stream().filter(stringListEntry -> stringListEntry.getKey().equals("Basia")).toList();
+        var result = classroom.entrySet().stream().filter(stringListEntry ->
+                stringListEntry.getKey().equals("Basia")).toList();
         // mamy tutaj takiego resulta, czyli listę entrySetów
 
         // zasadniczo moglibyśmy to wpisać do nowej mapy, coś z tym jeszcze zrobić .result

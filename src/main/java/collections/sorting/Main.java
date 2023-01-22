@@ -44,6 +44,9 @@ class Main {
 
         // WYRAŻENIE LAMBDA
 
+        //        listForComparing.sort((o1, o2) -> o1.compareTo(o2));
+        listForComparing.sort(Integer::compareTo); // replace with method reference
+        System.out.println("Lista posortowana rosnąco (zapis lambda)" + listForComparing);
 
 //        listForComparing.sort(new Comparator<Integer>() {
 //            @Override
@@ -57,10 +60,6 @@ class Main {
         listForComparing.sort((o1, o2) -> o2.compareTo(o1));
         System.out.println("Lista posortowana malejąco" + listForComparing);
 
-//        listForComparing.sort((o1, o2) -> o1.compareTo(o2));
-        listForComparing.sort(Integer::compareTo); // replace with method reference
-        System.out.println("Lista posortowana rosnąco" + listForComparing);
-
         // Comparator
         listForComparing.sort(Comparator.reverseOrder()); // reverse order
         System.out.println("Lista posortowana malejąco" + listForComparing);
@@ -69,7 +68,7 @@ class Main {
         // ------------------------- SORTOWANIE - COMPARATOR (Porównytwanie Stringów) ------------------------------
         List<String> stringList = new ArrayList<>(List.of("Karol", "Adam", "Zygmunt", "Celina"));
 
-        System.out.println("Nieposrotowana lista: " + stringList);
+        System.out.println("Nieposortowana lista: " + stringList);
         stringList.sort(new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {

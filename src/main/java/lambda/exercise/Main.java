@@ -21,6 +21,7 @@ public class Main {
 
         System.out.println("Tylko liczby parzyste: " + process(numbers, isEven));
         System.out.println("Tylko liczby większe od 10: " + process(numbers, number -> number > 10));
+        System.out.println("Tylko liczby nieparzyste TERAZ: " + process(numbers, number -> number % 2 != 0)); // zapis lambda
         System.out.println("Tylko liczby nieparzyste: " + process(numbers, new Process() {
             @Override
             public boolean apply(Integer num) {
@@ -41,6 +42,7 @@ public class Main {
         return list;
     }
 
+    // TODO popróbować sobie jeszcze z tą metodą powyżej, przenazalizować, skumać
 
 //    private static List<Integer> process(List<Integer> numbers, ProcessInterface processInterface) {
 //        List<Integer> isEven = new ArrayList<>();
