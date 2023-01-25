@@ -1,13 +1,13 @@
 package homework.fifth;
 
 public class First {
-    Integer first;
+    First first;
 
-    public First(Integer first){
+    public First(){
         this.first = first;
     }
 
-    public void first(){
-        System.out.println(first);
+    public static First first(First first){
+        return first;
     }
 }
