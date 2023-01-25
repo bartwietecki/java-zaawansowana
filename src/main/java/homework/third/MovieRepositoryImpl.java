@@ -2,6 +2,8 @@ package homework.third;
 
 import homework.third.repository.MovieRepository;
 
+import java.util.Arrays;
+
 import static homework.third.repository.MovieRepository.movies;
 
 public class MovieRepositoryImpl implements MovieRepositoryApi {
@@ -19,7 +21,7 @@ public class MovieRepositoryImpl implements MovieRepositoryApi {
         MovieRepository.movies[id] = movie;
         id--;
 
-        // ?
+        // nie wiem czy dobrze ?
     }
 
     @Override
@@ -44,9 +46,8 @@ public class MovieRepositoryImpl implements MovieRepositoryApi {
 
     @Override
     public void findByTitle(Movie movie) {
-
-        // ?
-
+        var title = Arrays.stream(movies).
+                filter(movie1 -> movie1.getTitle().startsWith("A"));
     }
 
 }

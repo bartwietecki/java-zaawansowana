@@ -1,9 +1,9 @@
 package homework.fifth;
 
 public class Second {
-    Integer second;
+    Second second;
 
-    public Second(Integer second){
+    public Second(){
         this.second = second;
     }
 
