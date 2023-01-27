@@ -9,4 +9,5 @@ public interface MovieRepositoryApi {
     Movie[] findAll();
 
     void findByTitle(Movie movie);
+
 }

@@ -32,8 +32,8 @@ public class MovieRepositoryImpl implements MovieRepositoryApi {
             if (m != null)
                 counter++;
         }
-        Movie[] result = new Movie[counter];
 
+        Movie[] result = new Movie[counter];
         int index = 0;
         for (Movie m : tab) {
             if (m != null) {
@@ -44,10 +44,11 @@ public class MovieRepositoryImpl implements MovieRepositoryApi {
         return result;
     }
 
+    // ŹLE - ta metoda nie działa
     @Override
-    public void findByTitle(Movie movie) {
-        var title = Arrays.stream(movies).
-                filter(movie1 -> movie1.getTitle().startsWith("A"));
-    }
+    public void findByTitle(Movie title) {
+        boolean foundedTitle = Arrays.stream(movies).anyMatch(movie -> movie.equals(title));
+        System.out.println("Tytuł został znaleziony: " + foundedTitle);
+        }
 
 }

@@ -1,8 +1,6 @@
 package homework.fourth;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public enum Continent {
 
@@ -51,8 +49,12 @@ public enum Continent {
         allContinents1.stream().max(Comparator.comparing(Continent::getSurface)).ifPresent(System.out::println);
         System.out.println("Tutaj najmniejsza powierzchnia z Listy: ");
         allContinents1.stream().min(Comparator.comparing(Continent::getSurface)).ifPresent(System.out::println);
+
+        // ########################################################################################################
+
     }
 
+    // ŹLE - te metody nie działają
 
     public static Continent biggestSurface(Continent[] continents) {
         double maxValue = 0;
@@ -77,14 +79,6 @@ public enum Continent {
     }
 
 }
-
-// Operator '>' cannot be applied to 'homework.fourth.Continent'
-
-
-
-
-
-
 
 
 
