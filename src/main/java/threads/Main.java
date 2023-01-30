@@ -24,6 +24,13 @@ public class Main {
 
 
 
+    }
+
+}
+
+
+
+
 
 
 
@@ -44,5 +51,4 @@ public class Main {
 
         // każdy watęk jest obsługiwany przez inny wątek procesora
 
-    }
-}
+
