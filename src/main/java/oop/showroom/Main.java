@@ -46,6 +46,5 @@ public class Main {
         aeroplane.setBrand(BrandType.CITROEN);
         System.out.println(aeroplane.getSimpleVehicle());
 
-
     }
 }
