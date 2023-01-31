@@ -1,9 +1,17 @@
 package showroom.service;
 
+import showroom.exceptions.BadObjectException;
+import showroom.exceptions.NotFoundException;
 import showroom.model.Vehicle;
+import showroom.model.enums.BrandType;
 import showroom.repository.VehicleRepository;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import static showroom.exceptions.ExceptionMessages.OBJECT_CANNOT_BE_NULL;
+import static showroom.exceptions.ExceptionMessages.OBJECT_NOT_FOUND_BY_PROVIDED_ID;
 
 public class VehicleServiceImpl implements VehicleService { // implementacja interfejsów, robi się to po to aby
     // zaimplementować jakiś "service"
@@ -23,7 +31,7 @@ public class VehicleServiceImpl implements VehicleService { // implementacja int
 
     @Override
     public void addVehicle(Vehicle vehicle) {
-        VehicleRepository.vehicles.add(vehicle);
+        VehicleRepository.add(vehicle);
     }
 
 
@@ -53,7 +61,31 @@ public class VehicleServiceImpl implements VehicleService { // implementacja int
 
     @Override
     public List<Vehicle> getAllVehicles() {
-        return VehicleRepository.vehicles;
+        return VehicleRepository.getVehicles();
     }
 
+    /**
+     * Metoda pozwalająca na pobranie z repozytorium pojazdów danej marki
+     * @param brandType marka pojazdu
+     * @return zwracamy listę pojazdów
+     */
+    @Override
+    public List<Vehicle> getVehiclesByBrand(BrandType brandType) {
+        Optional.ofNullable(brandType).orElseThrow(() -> new BadObjectException(OBJECT_CANNOT_BE_NULL));
+                                                  // jeśli to będzie nullem to po prostu dostaniemy BadObjectException
+        return VehicleRepository.getVehicles().stream().filter(v -> brandType.equals(v.getBrand()))
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Metoda pozwalająca na usunięcie pojazdu o danym id
+     * @param id identyfikator pojazdu
+     */
+    @Override
+    public void removeVehicle(Long id) {
+        Optional.ofNullable(id).orElseThrow(() -> new BadObjectException(OBJECT_CANNOT_BE_NULL));
+        var vehicle = VehicleRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException(OBJECT_NOT_FOUND_BY_PROVIDED_ID)); // .orElseThrow() bo to optional
+        VehicleRepository.remove(id);
+    }
 }

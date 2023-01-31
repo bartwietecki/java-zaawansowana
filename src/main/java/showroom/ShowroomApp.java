@@ -7,6 +7,7 @@ import showroom.model.enums.*;
 import showroom.service.VehicleService;
 import showroom.service.VehicleServiceImpl;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ShowroomApp {
@@ -38,13 +39,14 @@ public class ShowroomApp {
                 case 1 -> addCar(vehicleService);
                 case 2 -> addMotorbike(vehicleService);
                 case 3 -> showVehicles(vehicleService);
+                case 4 -> showVehiclesByBrand(vehicleService);
+                case 5 -> removeVehicleById(vehicleService);
                 case 0 -> {
                     on = false; // jeśli ktoś wybierze zero to program się kończy -> on = false;
                     System.out.println("Do widzenia!");
                 }
                 default -> {
                     System.out.println("Wprowadzono błędne dane. Nie ma operacji o takim numerze.");
-                    System.out.println();
                 }
             }
         }
@@ -55,6 +57,8 @@ public class ShowroomApp {
         System.out.println("1 - dodaj nowy samochód");
         System.out.println("2 - dodaj nowy motocykl");
         System.out.println("3 - wyświetl wszystkie pojazdy");
+        System.out.println("4 - wyświetl wszystkie pojazdy dla danej marki");
+        System.out.println("5 - usuń pojazd o danym identyfikatorze");
         System.out.println("0 - zakończ program");
     }
 
@@ -157,6 +161,25 @@ public class ShowroomApp {
             System.out.println(vehicle);
         }
         System.out.println();
+    }
+
+    private void showVehiclesByBrand(VehicleService vehicleService) {
+        System.out.println("Marki w systemie: ");
+        System.out.println(Arrays.toString(BrandType.values()));
+        System.out.println("Podaj markę: ");
+        String brand = SCANNER.next();
+        System.out.println("Lista wszystkich pojazdów marki: " + brand + ":");
+        for (Vehicle vehicle : vehicleService.getVehiclesByBrand(BrandType.valueOf(brand))) {
+            System.out.println(vehicle);
+        }
+        System.out.println();
+    }
+
+    private void removeVehicleById(VehicleService vehicleService) {
+        System.out.println("Podaj id pojazdu");
+        Long id = SCANNER.nextLong();
+        vehicleService.removeVehicle(id);
+        System.out.println("Usunięto pojazd o id: " + id);
     }
 
     private void initialMethod(VehicleService vehicleService) {

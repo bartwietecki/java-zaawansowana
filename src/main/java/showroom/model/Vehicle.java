@@ -3,7 +3,7 @@ package showroom.model;
 import showroom.model.enums.*;
 
 public abstract class Vehicle {
-
+    private long id;
     private BrandType brand;
     private ModelType model;
     private ColourType colour;
@@ -85,13 +85,20 @@ public abstract class Vehicle {
         isUsed = used;
     }
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
     // ZADANIE: Jak zrobić, aby pokazać wszystkie elementy z Vehicle oraz Car (toString).
     @Override
     public String toString() {
         return "Vehicle{" +
-                "brand=" + brand +
+                "id=" + id +
+                ", brand=" + brand +
                 ", model=" + model +
                 ", colour=" + colour +
                 ", engine=" + engine +
