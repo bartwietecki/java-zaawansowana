@@ -52,9 +52,34 @@ public enum Continent {
 
         // ########################################################################################################
 
+
+        // Poprawne metody dla Kontynent MAX and MIN surface
+        System.out.println("Poprawne metody MAX and MIN:");
+        System.out.println(maxSurface());
+        System.out.println(minSurface());
     }
 
+    // Porawne metody MAX and MIN surface
 
+    public static Continent maxSurface() {
+        Continent max = null;
+        for (Continent continent : Continent.values()) {
+            if (max == null || continent.surface > max.surface) {
+                max = continent;
+            }
+        }
+        return max;
+    }
+
+    public static Continent minSurface() {
+        Continent min = null;
+        for (Continent continent : Continent.values()) {
+            if (min == null || continent.surface < min.surface) {
+                min = continent;
+            }
+        }
+        return min;
+    }
 
 
     // ŹLE - te metody nie działają
