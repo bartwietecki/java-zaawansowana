@@ -82,7 +82,7 @@ public enum Continent {
     }
 
 
-    // ŹLE - te metody nie działają
+    // ŹLE - te metody nie działają, tzn. działają ale wskazują na indeksy...
 
     public static Continent biggestSurface(Continent[] continents) {
         double maxValue = 0;
