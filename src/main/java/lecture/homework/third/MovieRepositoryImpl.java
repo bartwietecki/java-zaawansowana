@@ -2,8 +2,6 @@ package lecture.homework.third;
 
 import lecture.homework.third.repository.MovieRepository;
 
-import java.util.Arrays;
-
 import static lecture.homework.third.repository.MovieRepository.movies;
 
 public class MovieRepositoryImpl implements MovieRepositoryApi {
@@ -44,11 +42,40 @@ public class MovieRepositoryImpl implements MovieRepositoryApi {
         return result;
     }
 
+    // P O P R A W N A Metoda void findByTitle
+    public void findByTitle(Movie movie) {
+        for (Movie m : movies) {
+            if(m.getTitle().equals(movie.getTitle())) {
+                System.out.println("Znaleziono film:");
+                System.out.println("Title: " + movie.getTitle());
+                System.out.println("Year of release: " + movie.getYearOfRelease());
+                break;
+            }
+        }
+        System.out.println("Movie not found");
+    }
+
+    // Metoda ok, ale nie jest voidem
+
+//    public Movie findByTitle(String title) {
+//        for (Movie m : movies) {
+//            if (m.getTitle().equals(title)){
+//                return m;
+//            }
+//        }
+//        return null;
+//    }
+
+
     // ŹLE - ta metoda nie działa
+    /*
+
     @Override
     public void findByTitle(Movie title) {
         boolean foundedTitle = Arrays.stream(movies).anyMatch(movie -> movie.equals(title));
         System.out.println("Tytuł został znaleziony: " + foundedTitle);
         }
+
+     */
 
 }

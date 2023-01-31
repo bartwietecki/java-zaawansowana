@@ -54,6 +54,9 @@ public enum Continent {
 
     }
 
+
+
+
     // ŹLE - te metody nie działają
 
     public static Continent biggestSurface(Continent[] continents) {

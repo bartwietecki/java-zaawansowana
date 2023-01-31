@@ -1,6 +1,6 @@
 package showroom.service;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import showroom.model.Car;
 import showroom.model.Vehicle;
 import showroom.model.enums.BrandType;
@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class VehicleServiceTest {
 
     @Test
-    public void shouldAddVehicle () {
+    public void shouldAddVehicle() {
         // given
         BrandType brandType = BrandType.AUDI;
         boolean isUsed = false;
@@ -37,9 +37,19 @@ public class VehicleServiceTest {
         assertEquals(isUsed, vehicle.isUsed());
 
 
-
     }
 
 
-
 }
+
+
+
+/*
+
+try {
+   // kod, który może generować wyjątek
+} catch (typWyjatku nazwaZmiennej) {
+   // kod do obsługiwania wyjątku
+}
+
+ */

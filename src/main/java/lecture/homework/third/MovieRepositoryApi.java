@@ -8,6 +8,6 @@ public interface MovieRepositoryApi {
 
     Movie[] findAll();
 
-    void findByTitle(Movie movie);
+    void findByTitle(Movie title);
 
 }

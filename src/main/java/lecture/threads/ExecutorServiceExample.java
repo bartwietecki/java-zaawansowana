@@ -28,20 +28,21 @@ public class ExecutorServiceExample {
 
         AtomicReference<Integer> oddCount = new AtomicReference<>(0);
         result.stream().filter(f -> {
-            Boolean isEven = false;
-            try {
-                isEven = f.get();
-            } catch (InterruptedException | ExecutionException e) {
-                throw new RuntimeException(e);
-            }
-            if (!isEven) {
-                oddCount.getAndSet(oddCount.get() + 1);
-            }
-            return isEven;
+                    Boolean isEven = false;
+                    try {
+                        isEven = f.get();
+                    } catch (InterruptedException | ExecutionException e) {
+                        throw new RuntimeException(e);
+                    }
+                    if (!isEven) {
+                        oddCount.getAndSet(oddCount.get() + 1);
+                    }
+                    return isEven;
         }).toList();
         System.out.println("Nieparzystych liczb: " + oddCount);
 
     }
+
 
     private static List<Future<Boolean>> executeTasks(List<Integer> numbers) throws InterruptedException, ExecutionException {
         List<Callable<Boolean>> tasks = new ArrayList<>();
@@ -63,8 +64,10 @@ public class ExecutorServiceExample {
         }
         // na 10 wątkach będzie pracował mój ExecutorService
         ExecutorService executorService = Executors.newFixedThreadPool(10);
+
         // teraz chcę, aby ExecutorService wywoał wszystkie taski
 //        executorService.invokeAll(tasks);
+
         List<Future<Integer>> result = executorService.invokeAll(tasks);
         executorService.shutdown();
 //        System.out.println(result);
